@@ -1,0 +1,8 @@
+#!/bin/bash
+
+    sudo tcpdump -i wlp3s0 -w data.cap & 
+  export APP_PID=$!  
+  touch /home/dribl/pr/temp.txt
+  echo $APP_PID > temp.txt 
+
+

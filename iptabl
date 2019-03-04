@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DEBUG="/home/dribl/pr/vivod.log" #log's location
+
+function msg {
+  echo "$1" >> "$DEBUG" #send messages to log
+}
+
+a=$(cat wantedUsers.txt)
+
+msg " $a was block"
+
+#echo " u $a was block" > vivod.log
+
+sudo iptables -A INPUT -m mac --mac-source $a -j DROP
+
+#msg "Monitoring proximity of \"$name\" [$DEVICE]";

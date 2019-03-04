@@ -1,0 +1,65 @@
+#!/bin/bash
+
+
+timeInterval=5
+APP_PID=0
+
+
+main()
+{ 
+ 
+ #dump()
+
+ #gnome-terminal -- /bin/bash -c ls
+ gnome-terminal -- sh -c " ./killer ; bash"
+ 
+ #gnome-terminal -- sh -c "sudo tcpdump -i wlp3s0 -w data.cap  ;bash" &  
+ 
+  gnome-terminal -- sh -c "./tcpd ;bash"
+ 
+  while [ $x -eq 0 ]
+  do 
+   echo "===================================================="
+   echo "----------------------------------------------------"
+   echo "menu of the wds                                    |"
+   echo "----------------------------------------------------"
+   echo ""
+   echo "----------------------------------------------------"
+   echo "start checking 1                                   |"
+   echo "exit - press 9                                     |"
+   echo "----------------------------------------------------"
+  read a
+ case "$a" in
+  1 ) checking;;
+  9 ) x=1;;
+  * ) echo "unknown action" ;;      
+ esac
+done
+ 
+}
+
+ checking()
+{
+ sudo ./put.out
+ cat vivod.log
+  sleep $timeInterval
+}
+
+
+#dump()
+#{
+  
+  #sudo tcpdump -i enp0s20f0u2 -w data.cap  
+ 
+ #q=0
+# while [ $q  -le 200000 ]
+ # do
+  #  q=$(du -b log_whatsapp.cap |awk '{ print $1}')
+  #done
+#}
+
+ x=0
+main
+
+
+

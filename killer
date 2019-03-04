@@ -1,0 +1,20 @@
+#!/bin/bash
+
+a=0
+ while [ $a -eq 0 ] 
+ do
+   q=0
+     sleep 5
+     a=$(cat temp.txt)
+     echo $a
+     #rm /home/dribl/pr/temp.txt
+ 
+     while [ $q -le 20000 ]
+     do 
+       sleep 1
+      q=$(du -b data.cap |awk '{ print $1}')
+         echo $q
+     done
+     sudo kill $a
+ done
+ #echo "hello,world"
