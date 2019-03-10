@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tcpdump -i wlp3s0 -w  /home/dribl/my_start/dump.cap
+

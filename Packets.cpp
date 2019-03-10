@@ -1,5 +1,9 @@
 //#include "packet.cpp"
 
+#include <vector>
+
+
+
 using namespace std;
 
 struct pcapHeader
@@ -18,10 +22,11 @@ class Packets
    
 public:
     Packets();
-     pcapHeader f_header; 
+    pcapHeader f_header; 
     int size_file;
     string f_name;
-    packet mass[1000];
+    int allpackets=0;
+    vector <packet> p_mass;
 };
 
 Packets::Packets()
